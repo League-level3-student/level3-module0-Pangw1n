@@ -8,7 +8,29 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class _02_RobotRace {
     // 1. make a main method
-
+	//public static void main(String[] args) {
+	//	Robot[] robs = new Robot[5];
+	//	for (int i = 0; i<robs.length; i++)
+	//	{
+	//		robs[i] = new Robot();
+	//		robs[i].setX(i * 150 + 100);
+	//		robs[i].setY(500);
+	//	}
+	//	
+	//	Robot winner = null;
+	//	
+	//	while (winner == null)
+	//	{
+	//		for (Robot rob : robs)
+	//		{
+	//			rob.move(new Random().nextInt(50));
+	//			if (rob.getY() < 50)
+	//			{
+	//				winner = rob;
+	//			}
+	//		}
+	//	}
+	//}
         // 2. create an array of 5 robots.
 
         // 3. use a for loop to initialize the robots.
@@ -23,6 +45,30 @@ public class _02_RobotRace {
     
         // 7. declare that robot the winner and throw it a party!
     
+	public static void main(String[] args) {
+		Robot[] robs = new Robot[2];
+		for (int i = 0; i<robs.length; i++)
+		{
+			robs[i] = new Robot();
+			robs[i].setX(400);
+			robs[i].setY(50 + (i * 100));
+			robs[i].setAngle(90);
+			robs[i].setSpeed(10);
+			robs[i].penDown();
+		}
+		
+		Robot winner = null;
+		
+		while (winner == null)
+		{
+			for (Robot rob : robs)
+			{
+				int x = new Random().nextInt(50);
+				rob.turn((int) ((x / (2 * Math.PI * 200) * 360)));
+				rob.move(x);
+			}
+		}
+	}
         // 8. try different races with different amounts of robots.
     
         // 9. make the robots race around a circular track.
