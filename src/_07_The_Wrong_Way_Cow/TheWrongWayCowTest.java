@@ -34,7 +34,7 @@ import static org.junit.Assert.*;
 public class TheWrongWayCowTest {
 
   // show the field
-  private static char[][] show(final char[][] field) {
+  public static char[][] show(final char[][] field) {
     for (int i = 0; i < field.length; i++) {
       System.out.println(new String(field[i]));
     }
