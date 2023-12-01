@@ -72,7 +72,7 @@ public class TheWrongWayCow {
         				{
         					directions[row][col] = 'u';
         					upCows ++;
-        					break;
+        					continue;
         				}
         			}
         			//check down
@@ -82,7 +82,7 @@ public class TheWrongWayCow {
         				{
         					directions[row][col] = 'd';
         					downCows ++;
-        					break;
+        					continue;
         				}
         			}
             		//check right
@@ -92,7 +92,7 @@ public class TheWrongWayCow {
         				{
         					directions[row][col] = 'r';
         					rightCows ++;
-        					break;
+        					continue;
         				}
         			}
             		//check left
@@ -102,12 +102,12 @@ public class TheWrongWayCow {
         				{
         					directions[row][col] = 'l';
         					leftCows ++;
-        					break;
+        					continue;
         				}
         			}
-        			
-        			directions[row][col] = '.';
         		}
+
+    			directions[row][col] = '.';
         	}
         }
         TheWrongWayCowTest.show(directions);
@@ -129,7 +129,6 @@ public class TheWrongWayCow {
         		if (directions[row][col] == direction)
         		{
         			int[] coords = new int[] {col, row};
-        			System.out.println(col + " " + row);
         			return coords;
         		}
         	}
